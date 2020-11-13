@@ -1,22 +1,22 @@
 # Parametric-Leaky-Integrate-and-Fire-Spiking-Neuron
 
-This  repository contains the origin codes and TensorBoard logs for the paper *Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks*. The trained models are too large that we can't upload them to this repository. But we used a identical seed during training, and we can ensure that the user can get almost the same accuracy when using our codes to train.
+本仓库包含 *Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks* 一文的原始代码、TensorBoard日志。原始模型的体积太大，因此我们没有上传到此仓库。但我们在训练时固定了随机种子，能够确保使用者在重新训练时，得到几乎一致的性能。
 
-## Directory structure
+## 文件结构w 
 
-`codes` contains the origin codes:
+`codes`文件夹包含原始代码，其中：
 
-`models.py` defines the networks.
+`models.py`定义网络
 
-`train.py` trains models on the training set, tests on the test set alternately, and records the maximum test accuracy, which is the accuracy-A in the paper.
+`train.py`在训练集上训练，在测试集上测试，报告的性能是最高测试集性能，对应原文中的accuracy-A
 
-`train_val.py` splits the origin training set into a new training set and validation set, trains on the new training set, tests on the validation set alternately, and records the test accuracy on the test set only once, with the model achieving the maximum validation accuracy, which is the accuracy-B in the paper.
+`train_val.py`将训练集重新划分成训练集和验证集，在训练集上训练，在验证集上测试，报告的性能是在验证集正确率最高时的测试集性能，对应原文中的accuracy-B
 
-`logs` contains `A` and `B` directories, which contains TensorBoard logs for different accuracies, respectively.
+`logs`文件夹下的A目录和B目录，包含相应的TensorBoard日志
 
-## Setup
+## 依赖
 
-The origin codes uses the old version SpikingJelly. To maximize reproducibility, the user can download the latest SpikingJelly and rollback to the version that we used to train:
+基于老版本的SpikingJelly。为确保可复现性，可以下载最新版的SpikingJelly后，再回退到原文训练时使用的版本：
 
 
 ```bash
@@ -26,11 +26,11 @@ git reset --hard f13b80538042a565b0764df195594e3ee5b54255
 python setup.py install
 ```
 
-## Running codes
+## 运行示例
 
-Here are the origin running for accuracy-B:
+训练原文中的accuracy-B对应的模型：
 
-| Dataset       | Running codes                                                |
+| 数据集        | 启动命令                                                     |
 | ------------- | ------------------------------------------------------------ |
 | MNIST         | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name MNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
 | Fashion-MNIST | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name FashionMNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
