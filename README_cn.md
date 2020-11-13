@@ -1,8 +1,10 @@
 # Parametric-Leaky-Integrate-and-Fire-Spiking-Neuron
 
+[English README](./README.md)
+
 本仓库包含 *Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks* 一文的原始代码、TensorBoard日志。原始模型的体积太大，因此我们没有上传到此仓库。但我们在训练时固定了随机种子，能够确保使用者在重新训练时，得到几乎一致的性能。
 
-## 文件结构w 
+## 文件结构
 
 `codes`文件夹包含原始代码，其中：
 

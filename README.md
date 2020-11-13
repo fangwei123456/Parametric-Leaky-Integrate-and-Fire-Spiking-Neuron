@@ -1,5 +1,7 @@
 # Parametric-Leaky-Integrate-and-Fire-Spiking-Neuron
 
+[中文README](./README_cn.md)
+
 This  repository contains the origin codes and TensorBoard logs for the paper *Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks*. The trained models are too large that we can't upload them to this repository. But we used a identical seed during training, and we can ensure that the user can get almost the same accuracy when using our codes to train.
 
 ## Directory structure
