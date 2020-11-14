@@ -2,7 +2,7 @@
 
 [中文README](./README_cn.md)
 
-This  repository contains the origin codes and TensorBoard logs for the paper *Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks*. The trained models are too large that we can't upload them to this repository. But we used a identical seed during training, and we can ensure that the user can get almost the same accuracy when using our codes to train.
+This  repository contains the origin codes and TensorBoard logs for the paper *[Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks](https://arxiv.org/abs/2007.05785)*. The trained models are too large that we can't upload them to this repository. But we used a identical seed during training, and we can ensure that the user can get almost the same accuracy when using our codes to train.
 
 ## Directory structure
 
@@ -28,6 +28,56 @@ git reset --hard f13b80538042a565b0764df195594e3ee5b54255
 python setup.py install
 ```
 
+## Datasets
+
+The line 64 of `train.py`, and line 84 of `train_val.py` defines the dataset path:
+
+`dataset_dir = '/userhome/datasets/' + dataset_name`
+
+where `/userhome/datasets/` is the root path of all datasets.
+
+The root path of all datasets should have the following directory structure:
+
+```
+|-- CIFAR10
+|   |-- cifar-10-batches-py
+|   `-- cifar-10-python.tar.gz
+|-- CIFAR10DVS
+|   |-- airplane.zip
+|   |-- automobile.zip
+|   |-- bird.zip
+|   |-- cat.zip
+|   |-- deer.zip
+|   |-- dog.zip
+|   |-- events
+|   |-- frames_num_20_split_by_number_normalization_None
+|   |-- frog.zip
+|   |-- horse.zip
+|   |-- ship.zip
+|   `-- truck.zip
+|-- DVS128Gesture
+|   |-- DvsGesture.tar.gz
+|   |-- LICENSE.txt
+|   |-- README.txt
+|   |-- events_npy
+|   |-- extracted
+|   |-- frames_num_20_split_by_number_normalization_None
+|   `-- gesture_mapping.csv
+|-- FashionMNIST
+|   |-- FashionMNIST
+|-- MNIST
+|   `-- MNIST
+`-- NMNIST
+    |-- Test.zip
+    |-- Train.zip
+    |-- events
+    `-- frames_num_20_split_by_number_normalization_None
+```
+
+MNIST, Fashion-MNIST and CIFAR10 dataset can be available from [torchvision](https://github.com/pytorch/vision). For neuromorphic datasets' installation, see
+
+https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html
+
 ## Running codes
 
 Here are the origin running for accuracy-B:
@@ -41,3 +91,36 @@ Here are the origin running for accuracy-B:
 | CIFAR10-DVS   | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name CIFAR10DVS -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 4 -split_by number -normalization None -use_plif |
 | DVS Gesture   | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name DVS128Gesture -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 5 -split_by number -normalization None -use_plif |
 
+The code can recovery training from the interruption. It will load the exist model and continue training from the last epoch.
+
+## Arguments Definition
+
+This table shows the definition of all arguments:
+
+| argument        | meaning                                                      | type                                                         | default |
+| --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
+| init_tau        | tau of all LIF neurons, or tau_0 of PLIF neurons             | float                                                        | -       |
+| batch_size      | training batch size                                          | int                                                          | 16      |
+| learning_rate   | learning rate                                                | float                                                        | 1e-3    |
+| T_max           | period of the learning rate schedule                         | int                                                          | 64      |
+| use_plif        | use PLIF neurons                                             | action='store_true'                                          | False   |
+| alpha_learnable | if given, `alpha` in the surrogate function is learnable     | action='store_true'                                          | False   |
+| use_max_pool    | if given, the network will use max pooling, else use average pooling | action='store_true'                                          | False   |
+| device          | use which device to train                                    | str                                                          | -       |
+| dataset_name    | use which dataset                                            | str(`MNIST`,`FashionMNIST`,`CIFAR10`,`NMNIST`,`CIFAR10DVS`or`DVSGesture`) | -       |
+| log_dir_prefix  | the path for TensorBoard to save logs                        | str                                                          | -       |
+| T               | simulating time-step                                         | int                                                          | -       |
+| channels        | the out channels of Conv2d for neuromorphic datasets         | int                                                          | -       |
+| number_layer    | the number of Conv2d layers for neuromorphic datasets        | int                                                          | -       |
+| split_by        | how to split the events to integrate them to frames          | str(`time` or`number` )                                      | -       |
+| normalization   | normalization for frames during being integrated             | str(`frequency`,`max`,`norm`,`sum` or`None`)                 | -       |
+| max_epoch       | maximum training epoch                                       | int                                                          | -       |
+| detach_reset    | whether detach the voltage reset during backward             | action='store_true'                                          | False   |
+
+For more details about `split_by`和`normalization`, see
+
+https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html#spikingjelly.datasets.utils.integrate_events_to_frames
+
+## New Implement
+
+We will add all models as examples of [SpikingJelly](https://github.com/fangwei123456/spikingjelly).
