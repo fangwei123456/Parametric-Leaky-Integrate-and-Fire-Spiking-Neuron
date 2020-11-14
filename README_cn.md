@@ -4,6 +4,25 @@
 
 本仓库包含 *[Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks](https://arxiv.org/abs/2007.05785)* 一文的原始代码、TensorBoard日志。原始模型的体积太大，因此我们没有上传到此仓库。但我们在训练时固定了随机种子，能够确保使用者在重新训练时，得到几乎一致的性能。
 
+## 性能
+
+下表为使用PLIF神经元，tau_0=2，最大池化的正确率：
+
+|            | MNIST  | Fashion-MNIST | CIFAR10 | N-MNIST | CIFAR10-DVS | DVS128 Gesture |
+| ---------- | ------ | ------------- | ------- | ------- | ----------- | -------------- |
+| accuracy-A | 97.72% | 94.38%        | 93.50%  | 99.61%  | 74.80%      | 97.57%         |
+| accuracy-B | 99.63% | 93.85%        | 92.58%  | 99.57%  | 69.00%      | 96.53%         |
+
+This table shows the accuracy-A of using PLIF/LIF neurons, different tau/tau_0 and average/max pooling:
+
+|              | pool | MNIST  | Fashion-MNIST | CIFAR-10 | N-MNIST | CIFAR10-DVS | DVS Gesture |
+| ------------ | ---- | ------ | ------------- | -------- | ------- | ----------- | ----------- |
+| PLIF,tau0=2  | max  | 99.72% | 94.38%        | 93.5%    | 99.61%  | 74.8%       | 97.57%      |
+| PLIF,tau0=16 | max  | 99.73% | 94.65%        | 93.23%   | 99.53%  | 70.5%       | 92.01%      |
+| LIF,tau=2    | max  | 99.69% | 94.17%        | 93.03%   | 99.64%  | 73.6%       | 96.88%      |
+| LIF,tau=16   | max  | 99.49% | 94.47%        | 47.5%    | 99.15%  | 62.4%       | 76.74%      |
+| PLIF,tau0=2  | avg  | 99.71% | 94.74%        | 93.3%    | 99.66%  | 72.7%       | 97.22%      |
+
 ## 文件结构
 
 `codes`文件夹包含原始代码，其中：

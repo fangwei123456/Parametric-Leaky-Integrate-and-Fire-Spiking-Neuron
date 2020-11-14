@@ -4,7 +4,26 @@
 
 This  repository contains the origin codes and TensorBoard logs for the paper *[Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks](https://arxiv.org/abs/2007.05785)*. The trained models are too large that we can't upload them to this repository. But we used a identical seed during training, and we can ensure that the user can get almost the same accuracy when using our codes to train.
 
-## Directory structure
+## Accuracy
+
+This table shows the accuracy of using PLIF neurons, tau_0=2 and max pooling:
+
+|            | MNIST  | Fashion-MNIST | CIFAR10 | N-MNIST | CIFAR10-DVS | DVS128 Gesture |
+| ---------- | ------ | ------------- | ------- | ------- | ----------- | -------------- |
+| accuracy-A | 97.72% | 94.38%        | 93.50%  | 99.61%  | 74.80%      | 97.57%         |
+| accuracy-B | 99.63% | 93.85%        | 92.58%  | 99.57%  | 69.00%      | 96.53%         |
+
+This table shows the accuracy-A of using PLIF/LIF neurons, different tau/tau_0 and average/max pooling:
+
+|              | pool | MNIST  | Fashion-MNIST | CIFAR-10 | N-MNIST | CIFAR10-DVS | DVS Gesture |
+| ------------ | ---- | ------ | ------------- | -------- | ------- | ----------- | ----------- |
+| PLIF,tau0=2  | max  | 99.72% | 94.38%        | 93.5%    | 99.61%  | 74.8%       | 97.57%      |
+| PLIF,tau0=16 | max  | 99.73% | 94.65%        | 93.23%   | 99.53%  | 70.5%       | 92.01%      |
+| LIF,tau=2    | max  | 99.69% | 94.17%        | 93.03%   | 99.64%  | 73.6%       | 96.88%      |
+| LIF,tau=16   | max  | 99.49% | 94.47%        | 47.5%    | 99.15%  | 62.4%       | 76.74%      |
+| PLIF,tau0=2  | avg  | 99.71% | 94.74%        | 93.3%    | 99.66%  | 72.7%       | 97.22%      |
+
+## Directory Structure
 
 `codes` contains the origin codes:
 
@@ -16,7 +35,7 @@ This  repository contains the origin codes and TensorBoard logs for the paper *[
 
 `logs` contains `A` and `B` directories, which contains TensorBoard logs for different accuracies, respectively.
 
-## Setup
+## Dependency
 
 The origin codes uses the old version SpikingJelly. To maximize reproducibility, the user can download the latest SpikingJelly and rollback to the version that we used to train:
 
