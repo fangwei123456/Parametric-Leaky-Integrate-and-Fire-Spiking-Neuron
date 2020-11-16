@@ -43,7 +43,7 @@ This table shows the accuracy-A of using PLIF/LIF neurons, different tau/tau_0 a
 ```bash
 git clone https://github.com/fangwei123456/spikingjelly.git
 cd spikingjelly
-git reset --hard f13b80538042a565b0764df195594e3ee5b54255
+git reset --hard 9a65a329ec054d12238a20f0306d0f894fd78b31
 python setup.py install
 ```
 
