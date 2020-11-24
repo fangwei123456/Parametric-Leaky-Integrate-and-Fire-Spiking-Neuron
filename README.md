@@ -99,7 +99,7 @@ https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html
 
 ## Running codes
 
-Here are the origin running for accuracy-B:
+Here are the origin running codes for accuracy-B:
 
 | Dataset       | Running codes                                                |
 | ------------- | ------------------------------------------------------------ |
