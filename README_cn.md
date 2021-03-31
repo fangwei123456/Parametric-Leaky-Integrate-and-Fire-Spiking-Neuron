@@ -138,7 +138,7 @@ https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html
 
 关于参数`split_by`和`normalization`的更多信息，参见
 
-https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html#spikingjelly.datasets.utils.integrate_events_to_frames
+https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.4/spikingjelly.datasets.html#spikingjelly.datasets.utils.integrate_events_to_frames
 
 ## 新版实现
 
