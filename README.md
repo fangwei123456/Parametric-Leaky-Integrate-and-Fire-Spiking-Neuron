@@ -138,7 +138,7 @@ This table shows the definition of all arguments:
 
 For more details about `split_by`和`normalization`, see
 
-https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html#spikingjelly.datasets.utils.integrate_events_to_frames
+https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.4/spikingjelly.datasets.html#integrate-events-to-frames-init-en
 
 ## New Implement
 
