@@ -142,4 +142,6 @@ https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.4/spikingjelly.datasets.html#s
 
 ## 新版实现
 
-我们会在[SpikingJelly](https://github.com/fangwei123456/spikingjelly)的样例中重新实现所有模型。
+SpikingJelly将本文中用于分类DVS手势的网络进行了实现，参见：[教程：分类DVS128 Gesture](https://spikingjelly.readthedocs.io/zh_CN/latest/clock_driven/14_classify_dvsg.html)
+
+教程中的代码使用新版的SpikingJelly实现，速度比本仓库的代码更快。
