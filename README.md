@@ -142,4 +142,4 @@ https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.4/spikingjelly.datasets.html#i
 
 ## New Implement
 
-We will add all models as examples of [SpikingJelly](https://github.com/fangwei123456/spikingjelly).
+SpkingJelly has added the network with LIF/max-pooling as an example. See this tutorial:https://spikingjelly.readthedocs.io/zh_CN/latest/clock_driven_en/14_classify_dvsg.html
