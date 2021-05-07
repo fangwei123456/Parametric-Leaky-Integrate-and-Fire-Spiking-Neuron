@@ -43,10 +43,18 @@ This table shows the accuracy-A of using PLIF/LIF neurons, different tau/tau_0 a
 ```bash
 git clone https://github.com/fangwei123456/spikingjelly.git
 cd spikingjelly
-git reset --hard 9a65a329ec054d12238a20f0306d0f894fd78b31
+git reset --hard 73f94ab983d0167623015537f7d4460b064cfca1
 python setup.py install
 ```
 
+对应的当时版本提交信息为：
+```bash
+commit 73f94ab983d0167623015537f7d4460b064cfca1
+Author: fangwei123456 <fangwei123456@pku.edu.cn>
+Date:   Wed Sep 30 16:42:25 2020 +0800
+
+    增加detach reset的选项
+```
 ## 数据集
 
 `train.py`的64行，和`train_val.py`的84行定义了数据集的路径：
