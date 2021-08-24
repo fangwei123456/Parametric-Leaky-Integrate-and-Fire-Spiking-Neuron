@@ -2,7 +2,7 @@
 
 [English README](./README.md)
 
-本仓库包含 *[Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks](https://www.researchgate.net/publication/345981609_Incorporating_Learnable_Membrane_Time_Constant_to_Enhance_Learning_of_Spiking_Neural_Networks)* 一文的原始代码、TensorBoard日志。原始模型的体积太大，因此我们没有上传到此仓库。但我们在训练时固定了随机种子，能够确保使用者在重新训练时，得到几乎一致的性能。
+本仓库包含 *[Incorporating Learnable Membrane Time Constant to Enhance Learning of Spiking Neural Networks](https://arxiv.org/abs/2007.05785)* 一文的原始代码、TensorBoard日志。原始模型的体积太大，因此我们没有上传到此仓库。但我们在训练时固定了随机种子，能够确保使用者在重新训练时，得到几乎一致的性能。
 
 ## 性能
 
