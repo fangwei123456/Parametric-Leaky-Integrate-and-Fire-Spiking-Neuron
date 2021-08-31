@@ -157,4 +157,4 @@ SpkingJelly has added the network with LIF/max-pooling as an example:
 
 The codes are written by the new version of SpikingJelly, which are faster than codes in this repository. 
 
-Other models are also available at SpikingJelly: https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/clock_driven/model/parametric_lif_net.py .
+All networks in this paper are available at SpikingJelly: https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/clock_driven/model/parametric_lif_net.py .
