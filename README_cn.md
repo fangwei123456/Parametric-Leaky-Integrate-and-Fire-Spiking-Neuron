@@ -154,4 +154,4 @@ SpikingJelly将本文中用于分类DVS手势的网络进行了实现，参见�
 
 教程中的代码使用新版的SpikingJelly实现，速度比本仓库的代码更快。
 
-SpikingJelly实现了本文中的全部模型：https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/clock_driven/model/parametric_lif_net.py 。
+SpikingJelly实现了本文中的全部网络结构：https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/clock_driven/model/parametric_lif_net.py 。
