@@ -156,3 +156,5 @@ SpkingJelly has added the network with LIF/max-pooling as an example:
 [Tutorial: Classify DVS128 Gesture](https://spikingjelly.readthedocs.io/zh_CN/latest/clock_driven_en/14_classify_dvsg.html)
 
 The codes are written by the new version of SpikingJelly, which are faster than codes in this repository. 
+
+Other models are also available at SpikingJelly: https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/clock_driven/model/parametric_lif_net.py .
