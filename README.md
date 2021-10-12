@@ -48,6 +48,7 @@ python setup.py install
 ```
 
 Here is the commit information:
+
 ```bash
 commit 73f94ab983d0167623015537f7d4460b064cfca1
 Author: fangwei123456 <fangwei123456@pku.edu.cn>
@@ -111,14 +112,14 @@ https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html
 
 Here are the origin running codes for accuracy-B:
 
-| Dataset       | Running codes                                                |
-| ------------- | ------------------------------------------------------------ |
-| MNIST         | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name MNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
-| Fashion-MNIST | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name FashionMNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
-| CIFAR10       | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name CIFAR10 -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
-| N-MNIST       | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name NMNIST -log_dir_prefix /userhome/plif_test/logsd -T 10 -max_epoch 1024 -detach_reset -channels 128 -number_layer 2 -split_by number -normalization None -use_plif |
-| CIFAR10-DVS   | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name CIFAR10DVS -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 4 -split_by number -normalization None -use_plif |
-| DVS128 Gesture   | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name DVS128Gesture -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 5 -split_by number -normalization None -use_plif |
+| Dataset        | Running codes                                                |
+| -------------- | ------------------------------------------------------------ |
+| MNIST          | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name MNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
+| Fashion-MNIST  | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name FashionMNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
+| CIFAR10        | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name CIFAR10 -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
+| N-MNIST        | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name NMNIST -log_dir_prefix /userhome/plif_test/logsd -T 10 -max_epoch 1024 -detach_reset -channels 128 -number_layer 2 -split_by number -normalization None -use_plif |
+| CIFAR10-DVS    | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name CIFAR10DVS -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 4 -split_by number -normalization None -use_plif |
+| DVS128 Gesture | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name DVS128Gesture -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 5 -split_by number -normalization None -use_plif |
 
 The code can recovery training from the interruption. It will load the exist model and continue training from the last epoch.
 
@@ -158,3 +159,16 @@ SpkingJelly has added the network with LIF/max-pooling as an example:
 The codes are written by the new version of SpikingJelly, which are faster than codes in this repository. 
 
 All networks in this paper are available at SpikingJelly: https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/clock_driven/model/parametric_lif_net.py .
+
+## Cite
+
+```
+@InProceedings{Fang_2021_ICCV,
+    author    = {Fang, Wei and Yu, Zhaofei and Chen, Yanqi and Masquelier, Timothee and Huang, Tiejun and Tian, Yonghong},
+    title     = {Incorporating Learnable Membrane Time Constant To Enhance Learning of Spiking Neural Networks},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2021},
+    pages     = {2661-2671}
+}
+```
