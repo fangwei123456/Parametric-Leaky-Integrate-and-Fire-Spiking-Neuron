@@ -48,6 +48,7 @@ python setup.py install
 ```
 
 对应的当时版本提交信息为：
+
 ```bash
 commit 73f94ab983d0167623015537f7d4460b064cfca1
 Author: fangwei123456 <fangwei123456@pku.edu.cn>
@@ -55,6 +56,7 @@ Date:   Wed Sep 30 16:42:25 2020 +0800
 
     增加detach reset的选项
 ```
+
 ## 数据集
 
 `train.py`的64行，和`train_val.py`的84行定义了数据集的路径：
@@ -109,14 +111,14 @@ https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html
 
 这里是获得accuracy-B的运行命令:
 
-| 数据集        | 运行命令                                                     |
-| ------------- | ------------------------------------------------------------ |
-| MNIST         | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name MNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
-| Fashion-MNIST | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name FashionMNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
-| CIFAR10       | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name CIFAR10 -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
-| N-MNIST       | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name NMNIST -log_dir_prefix /userhome/plif_test/logsd -T 10 -max_epoch 1024 -detach_reset -channels 128 -number_layer 2 -split_by number -normalization None -use_plif |
-| CIFAR10-DVS   | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name CIFAR10DVS -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 4 -split_by number -normalization None -use_plif |
-| DVS128 Gesture   | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name DVS128Gesture -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 5 -split_by number -normalization None -use_plif |
+| 数据集         | 运行命令                                                     |
+| -------------- | ------------------------------------------------------------ |
+| MNIST          | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name MNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
+| Fashion-MNIST  | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name FashionMNIST -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
+| CIFAR10        | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -use_plif -device cuda:0 -dataset_name CIFAR10 -log_dir_prefix /userhome/plif_test/logsd -T 8 -max_epoch 1024 -detach_reset |
+| N-MNIST        | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name NMNIST -log_dir_prefix /userhome/plif_test/logsd -T 10 -max_epoch 1024 -detach_reset -channels 128 -number_layer 2 -split_by number -normalization None -use_plif |
+| CIFAR10-DVS    | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name CIFAR10DVS -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 4 -split_by number -normalization None -use_plif |
+| DVS128 Gesture | python ./codes/train_val.py -init_tau 2.0 -use_max_pool -device cuda:0 -dataset_name DVS128Gesture -log_dir_prefix /userhome/plif_test/logsd -T 20 -max_epoch 1024 -detach_reset -channels 128 -number_layer 5 -split_by number -normalization None -use_plif |
 
 代码具有断点续训功能，如果检测到已经有保存的模型文件，会继续上一次的训练。
 
@@ -155,3 +157,16 @@ SpikingJelly将本文中用于分类DVS手势的网络进行了实现，参见�
 教程中的代码使用新版的SpikingJelly实现，速度比本仓库的代码更快。
 
 SpikingJelly实现了本文中的全部网络结构：https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/clock_driven/model/parametric_lif_net.py 。
+
+## 引用
+
+```
+@InProceedings{Fang_2021_ICCV,
+    author    = {Fang, Wei and Yu, Zhaofei and Chen, Yanqi and Masquelier, Timothee and Huang, Tiejun and Tian, Yonghong},
+    title     = {Incorporating Learnable Membrane Time Constant To Enhance Learning of Spiking Neural Networks},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2021},
+    pages     = {2661-2671}
+}
+```
