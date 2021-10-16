@@ -105,7 +105,7 @@ Date:   Wed Sep 30 16:42:25 2020 +0800
 
 MNIST, Fashion-MNIST和CIFAR10数据集可以由 [torchvision](https://github.com/pytorch/vision)直接提供下载；神经形态数据集的安装，请参见
 
-https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html
+https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.4/spikingjelly.datasets.html
 
 ## 运行示例
 
