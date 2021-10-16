@@ -106,7 +106,7 @@ The root path of all datasets should have the following directory structure:
 
 MNIST, Fashion-MNIST and CIFAR10 dataset can be available from [torchvision](https://github.com/pytorch/vision). For neuromorphic datasets' installation, see
 
-https://spikingjelly.readthedocs.io/zh_CN/latest/spikingjelly.datasets.html
+https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.4/spikingjelly.datasets.html
 
 ## Running codes
 
