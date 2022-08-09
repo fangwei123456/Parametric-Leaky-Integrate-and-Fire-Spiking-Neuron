@@ -153,12 +153,19 @@ https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.4/spikingjelly.datasets.html#i
 
 ## New Implement
 
-SpkingJelly has added the network with LIF/max-pooling as an example: 
-[Tutorial: Classify DVS128 Gesture](https://spikingjelly.readthedocs.io/zh_CN/latest/clock_driven_en/14_classify_dvsg.html)
+SpkingJelly (0.0.0.0.12 or the latest version) has added the network with LIF/max-pooling as an example: 
+
+0.0.0.0.12: https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.12/clock_driven_en/14_classify_dvsg.html
+
+latest: https://spikingjelly.readthedocs.io/zh_CN/latest/activation_based_en/classify_dvsg.html
 
 The codes are written by the new version of SpikingJelly, which are faster than codes in this repository. 
 
-All networks in this paper are available at SpikingJelly: https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/clock_driven/model/parametric_lif_net.py .
+All networks in this paper are available at SpikingJelly: 
+
+0.0.0.0.12: https://github.com/fangwei123456/spikingjelly/blob/0.0.0.0.12/spikingjelly/clock_driven/model/parametric_lif_net.py
+
+latest: https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/activation_based/model/sew_resnet.py
 
 ## Cite
 
