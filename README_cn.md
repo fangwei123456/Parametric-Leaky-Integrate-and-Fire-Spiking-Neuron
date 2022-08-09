@@ -152,11 +152,21 @@ https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.4/spikingjelly.datasets.html#s
 
 ## 新版实现
 
-SpikingJelly将本文中用于分类DVS手势的网络进行了实现，参见：[教程：分类DVS128 Gesture](https://spikingjelly.readthedocs.io/zh_CN/latest/clock_driven/14_classify_dvsg.html)
+SpikingJelly (0.0.0.0.12或 latest版本) 将本文中用于分类DVS手势的网络进行了实现，参见：
+
+0.0.0.0.12: https://spikingjelly.readthedocs.io/zh_CN/0.0.0.0.12/clock_driven/14_classify_dvsg.html
+
+latest: https://spikingjelly.readthedocs.io/zh_CN/latest/activation_based/classify_dvsg.html
+
 
 教程中的代码使用新版的SpikingJelly实现，速度比本仓库的代码更快。
 
-SpikingJelly实现了本文中的全部网络结构：https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/clock_driven/model/parametric_lif_net.py 。
+SpikingJelly实现了本文中的全部网络结构：
+
+0.0.0.0.12: https://github.com/fangwei123456/spikingjelly/blob/0.0.0.0.12/spikingjelly/clock_driven/model/parametric_lif_net.py
+
+latest: https://github.com/fangwei123456/spikingjelly/blob/master/spikingjelly/activation_based/model/sew_resnet.py
+
 
 ## 引用
 
